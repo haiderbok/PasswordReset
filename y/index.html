@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-functions.js"></script>
+
+
+
+
+</head>
+<body>
+    
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+ <div class="form-gap"></div>
+<div id= "container" class="container">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="text-center">
+                  <h3><i class="fa fa-lock fa-4x"></i></h3>
+                  <h2 class="text-center">Forgot Password?</h2>
+                  <p>You can reset your password here.</p>
+                  <div class="panel-body">
+                    <div id= "error">
+                      <p id="error-message" style="color: red;"></p>
+                    </div>
+                    <form  id="register-form" role="form" autocomplete="off" class="form" method="post">
+    
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                          <input id="password" name="password" placeholder="password" class="form-control"  type="password">
+                          <input id="confirm password" name="password" placeholder="confirm password" class="form-control"  type="password">
+
+                        </div>
+                      </div>
+                      <!-- <div class="form-group">
+                        <button onclick="click()" name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Reset Password" type="submit">
+                      </div>
+                       -->
+                       <button id ="submit-button"  type="button" class="btn btn-primary">Primary</button>
+                      <input type="hidden" class="hide" name="token" id="token" value=""> 
+                    </form>
+    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+</div>
+
+<div id ="After-contanier" style="align-items: center; display: none;" >
+
+  <p id="errorMessage" style="text-align: center; font-size: 30; font-weight: bold; margin-top: 200; ">Your Password has been reset. You can go back to the app and sign in with the new password.</p>
+</div>
+
+<script>
+  const firebaseConfig = {
+  apiKey: "AIzaSyCvuYVCSl7P55zpaqHa3SU9HRnTh88Gn3k",
+  authDomain: "fit-development-1452b.firebaseapp.com",
+  databaseURL: "https://fit-development-1452b.firebaseio.com",
+  projectId: "fit-development-1452b",
+  storageBucket: "fit-development-1452b.appspot.com",
+  messagingSenderId: "6846820672",
+  appId: "1:6846820672:web:2e1804fafc2e35c1874aa5",
+  measurementId: "G-ZGLLCJ36RQ"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore(); 
+const functions = firebase.functions();
+
+
+</script>
+
+<!-- Linking js handler for this form -->
+<script  src="./Fphandler.js"></script></body>
+</html>
